@@ -8,7 +8,7 @@ let serialPortConfig = {
 };
 
 let tp = new TpSeries({
-  debug: true, // default: false
+  debug: false, // default: false
   timeout: 5000 // default: 3000
 });
 

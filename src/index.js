@@ -177,8 +177,6 @@ module.exports = class tpSeries extends EventEmitter {
           try {
             if (command === 'ENABLE' && buffer.name === command) {
               this.enabled = true;
-            } else {
-              this.enabled = false;
             }
             if (command === 'DISABLE' && buffer.name === command) {
               this.enabled = false;
