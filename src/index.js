@@ -1,5 +1,6 @@
 const SerialPort = require('serialport');
 const EventEmitter = require('events');
+const chalk = require('chalk');
 const commandList = require('./commands');
 const status = require('./status_desc');
 
@@ -50,6 +51,7 @@ module.exports = class tpSeries extends EventEmitter {
 
       parser.on('data', (byte) => {
         if (byte.toString('hex') !== '81' && byte.toString('hex') !== '80') {
+          this.debug && console.log(`\n\nByte received : ${chalk.yellow(byte.toString('hex').toUpperCase())}\n`);
           if (this.currentCommand !== null) {
             try {
               this.eventEmitter.emit(
