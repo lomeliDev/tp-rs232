@@ -124,7 +124,8 @@ module.exports = class tpSeries extends EventEmitter {
       command === 'POWER_UP' ||
       command === 'ENABLE' ||
       command === 'DISABLE' ||
-      command === 'RESET'
+      command === 'DISABLE' ||
+      command === 'STATUS'
     ) {
       return new Promise((resolve) => {
         this.currentCommand = command;
@@ -136,7 +137,7 @@ module.exports = class tpSeries extends EventEmitter {
           if (command === 'RESET') {
             this.powerUp = false;
           }
-          if (command === 'ENABLE' || command === 'DISABLE') {
+          if (command === 'ENABLE' || command === 'DISABLE' || command === 'STATUS') {
             return resolve(this.newEvent(command));
           }
           return resolve(

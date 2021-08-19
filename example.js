@@ -25,9 +25,13 @@ tp.on('READ_NOTE', (result) => {
   console.log(result);
 
   if (result.channel === 2) {
-    tp.command('REJECT_BANKNOTE');
+    tp.command('REJECT_BANKNOTE').then((result) => {
+      console.log(result);
+    });
   } else {
-    tp.command('ACCEPT_BANKNOTE');
+    tp.command('ACCEPT_BANKNOTE').then((result) => {
+      console.log(result);
+    });
   }
 });
 
@@ -111,6 +115,12 @@ tp.open('/dev/tty.usbserial-14330', serialPortConfig)
       .then(() => tp.command('ENABLE'))
       .then((result) => {
         console.log(result);
+        setTimeout(() => {
+          tp.command('STATUS').then((result) => {
+            console.log('STATUS');
+            console.log(result);
+          });
+        }, 3000);
       });
   })
   .catch((error) => {
