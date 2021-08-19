@@ -15,6 +15,7 @@ module.exports = class tpSeries extends EventEmitter {
     this.powerUp = false;
     this.openPort = false;
     this.lastChannel = null;
+    this.error = null;
   }
 
   restore() {
@@ -24,6 +25,7 @@ module.exports = class tpSeries extends EventEmitter {
       this.powerUp = false;
       this.openPort = false;
       this.lastChannel = null;
+      this.error = null;
     } catch (error) {
       console.log(error);
     }
@@ -37,6 +39,10 @@ module.exports = class tpSeries extends EventEmitter {
 
   open(port, param = {}) {
     return new Promise((resolve, reject) => {
+      try {
+        this.port.close();
+      } catch (error) { this.error = error; }
+
       this.port = new SerialPort(port, {
         baudRate: param.baudRate || 9600,
         databits: param.databits || 8,
