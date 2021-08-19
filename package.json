@@ -10,7 +10,23 @@
   "engines": {
     "node": ">=10.4.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lomeliDev/tp-rs232.git"
+  },
+  "keywords": [
+    "TP1",
+    "TP11",
+    "TP2",
+    "TP3",
+    "TOP Vending Machine"
+  ],
+  "author": "lomelidev <miguel@lomeli.io>",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lomeliDev/tp-rs232/issues"
+  },
+  "homepage": "https://github.com/lomeliDev/tp-rs232#readme",
   "dependencies": {
     "chalk": "^2.4.2",
     "serialport": "^9.2.0"
