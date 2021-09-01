@@ -25,12 +25,12 @@ let tp = new TpSeries({
 
 ## Methods
 All methods use Promise
-- ```eSSP.open('COM1')``` - Connect device
-- ```eSSP.close()``` - Disconnect device
-- ```eSSP.command('COMMAND_NAME')``` - Execute command and get answer
-- ```eSSP.enabled``` - Validator status
-- ```eSSP.openPort``` - Port status
-- ```eSSP.powerUp``` - Power Up (Bill Acceptor Active)
+- ```tp.open('COM1')``` - Connect device
+- ```tp.close()``` - Disconnect device
+- ```tp.command('COMMAND_NAME')``` - Execute command and get answer
+- ```tp.enabled``` - Validator status
+- ```tp.openPort``` - Port status
+- ```tp.powerUp``` - Power Up (Bill Acceptor Active)
 
 ## Command
 ```js
