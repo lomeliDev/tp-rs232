@@ -107,7 +107,7 @@ tp.on('COMMAND_NOT_FOUND', () => {
   console.log('COMMAND_NOT_FOUND');
 });
 
-tp.open('/dev/tty.usbserial-14330', serialPortConfig)
+tp.open('/dev/tty.usbserial-14220', serialPortConfig)
   .then(() => {
     console.log('GO!!!');
 

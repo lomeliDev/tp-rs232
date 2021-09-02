@@ -1,6 +1,6 @@
 {
   "name": "tp-rs232",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Node.JS library for TOP Vending Machine",
   "main": "src/index.js",
   "scripts": {
@@ -29,7 +29,7 @@
   "homepage": "https://github.com/lomeliDev/tp-rs232#readme",
   "dependencies": {
     "chalk": "^2.4.2",
-    "serialport": "^9.2.0"
+    "serialport": "9.0.7"
   },
   "devDependencies": {
     "eslint": "^7.25.0",
